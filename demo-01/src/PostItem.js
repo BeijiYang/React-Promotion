@@ -26,7 +26,6 @@ class PostItem extends Component {
           time: <span>{time}</span>
         </div>
         <div>
-          {" "}
           <button
             onClick={() => {
               this.handleClick();
