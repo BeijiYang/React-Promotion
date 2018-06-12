@@ -1,4 +1,11 @@
 import React, { Component } from "react";
+import PostItem from "./PostItem";
+
+const data = [
+  { title: "talk about React", author: "Tom", time: "1 hours ago" },
+  { title: "whats your favorite frame", author: "Jerry", time: "2 hours ago" },
+  { title: "the era of Web App", author: "Jeason", time: "3 hours ago" }
+];
 
 class PostList extends Component {
   render() {
@@ -6,33 +13,14 @@ class PostList extends Component {
       <div>
         POSTS
         <ul>
-          <li>
-            <div>talk about React</div>
-            <div>
-              user: <span>Tom</span>
-            </div>
-            <div>
-              time: <span>3 hours ago</span>
-            </div>
-          </li>
-          <li>
-            <div>whats your favorite frame</div>
-            <div>
-              user: <span>Jerry</span>
-            </div>
-            <div>
-              time: <span>3 hours ago</span>
-            </div>
-          </li>
-          <li>
-            <div>the era of Web App</div>
-            <div>
-              user: <span>Jeason</span>
-            </div>
-            <div>
-              time: <span>3 hours ago</span>
-            </div>
-          </li>
+          {data.map(item => (
+            <PostItem
+              title={item.title}
+              author={item.author}
+              time={item.time}
+              key={item.time}
+            />
+          ))}
         </ul>
       </div>
     );
